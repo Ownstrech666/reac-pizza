@@ -24,7 +24,7 @@ function PizzaBlock({name, imageUrl, types, sizes, price}) {
             <div className="pizza-block__selector">
                 <ul>
                     {
-                        availableTypes.map((type,index) =>
+                        availableTypes?.map((type,index) =>
                             <li className={classNames({
                                     active: activeType === index,
                                     disabled: !types.includes(index),
@@ -38,7 +38,7 @@ function PizzaBlock({name, imageUrl, types, sizes, price}) {
                 </ul>
                 <ul>
                     {
-                        availableSize.map((size,index) =>
+                        availableSize?.map((size,index) =>
                             <li className={classNames({
                                 active: activeSize === size,
                                 disabled: !sizes.includes(size),
