@@ -1,11 +1,18 @@
 import React from 'react';
 
-function Categories({ items }) {
+//memo - следим только за пропсами,они обнрвились - рефрешем компонент
+//что б не ререндерился компонент, типа оптимизация
+//memo - сравнивает пропсы
+const Categories = React.memo(function Categories({ items , onClickItem}) {
 
     const [activeItem, setActiveItem] = React.useState(null);
 
     const onSelectItem= index =>{
-        if (activeItem !== index) setActiveItem(index);
+        if (activeItem !== index) {
+            setActiveItem(index);
+            onClickItem(index);
+        }
+
     };
 
     return (
@@ -28,6 +35,6 @@ function Categories({ items }) {
             </ul>
         </div>
     );
-}
+});
 
 export default Categories;
