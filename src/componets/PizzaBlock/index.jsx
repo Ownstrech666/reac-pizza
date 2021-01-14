@@ -3,11 +3,14 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 function PizzaBlock({name, imageUrl, types, sizes, price}) {
+
     const availableTypes = ['тонкое', 'традиционное'];
     const availableSize = [26, 30, 40];
 
     const [activeType, setActiveType] = React.useState(types[0]);
     const [activeSize, setSize] = React.useState(sizes[0]);
+
+
 
     const onSelectType = (index) => {
         setActiveType(index);
@@ -83,12 +86,14 @@ PizzaBlock.propTypes = {
     price: PropTypes.number.isRequired,
     types: PropTypes.arrayOf(PropTypes.number.isRequired).isRequired,
     sizes: PropTypes.arrayOf(PropTypes.number.isRequired).isRequired,
+    isLoading: PropTypes.bool,
 };
 
 //если значение вдруг не передано, то по умолчанию будут эти значения
 PizzaBlock.defaultProps = {
     types: [],
     sizes: [26, 30, 40],
+    isLoading: false,
 }
 
 export default PizzaBlock;

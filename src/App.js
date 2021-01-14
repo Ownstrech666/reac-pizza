@@ -1,24 +1,10 @@
 import React from 'react';
 import { Route } from "react-router-dom";
-import axios from 'axios';
-import {  useDispatch  } from 'react-redux';
-import { setPizzas } from'./redux/actions/pizzas';
 
 import { Header } from './componets';
 import { Home, Cart } from "./pages";
 
 function App() {
-
-    const dispatch  = useDispatch();
-
-    React.useEffect(() => {
-        axios.get(' http://localhost:3001/pizzas')
-        .then(({ data }) => {
-            dispatch(setPizzas(data));
-        });
-        // eslint-disable-next-line
-    },[]);
-
     return (
         <div className="wrapper">
              <Header/>
