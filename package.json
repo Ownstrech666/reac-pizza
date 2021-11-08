@@ -9,7 +9,6 @@
     "axios": "^0.21.0",
     "classnames": "^2.2.6",
     "json-server": "^0.16.3",
-    "node-sass": "^4.14.1",
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
     "react-content-loader": "^5.1.4",
@@ -19,6 +18,7 @@
     "react-scripts": "4.0.0",
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0",
+    "sass": "^1.43.4",
     "web-vitals": "^0.2.4"
   },
   "scripts": {
